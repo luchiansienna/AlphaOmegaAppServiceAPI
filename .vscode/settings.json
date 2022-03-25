@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin/Release/net5.0/publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/4398be90-3468-494b-8f76-05d37ee130f6/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/AlphaOmegaAppService"
+}
