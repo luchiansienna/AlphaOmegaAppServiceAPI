@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -14,7 +15,8 @@ namespace AlphaOmegaAppServiceAPI.Models
         public string Description { get; set; }
         public double Price { get; set; }
         public string Name { get; set; }
-        public BsonDateTime EventDate { get; set; }
+        [BsonRepresentation(BsonType.DateTime)]
+        public DateTime EventDate { get; set; }
         public string LocationAddress { get; set; }
     }
 }

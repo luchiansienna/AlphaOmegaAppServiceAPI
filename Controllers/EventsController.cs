@@ -28,7 +28,7 @@ namespace AlphaOmegaAppServiceAPI.Controllers
         [HttpGet("{Id}", Name = "GetEvent")]
         public async Task<ActionResult<Event>> GetById(string Id)
         {
-            var product =  await _productService.GetByIdAsync(Id);
+            var product = await _productService.GetByIdAsync(Id);
 
             if (product == null)
             {
@@ -43,7 +43,7 @@ namespace AlphaOmegaAppServiceAPI.Controllers
         {
             await _productService.CreateAsync(item);
 
-            return CreatedAtRoute("GetProduct", new { Id = item.Id }, item);
+            return CreatedAtRoute("GetEvent", new { Id = item.Id }, item);
         }
 
         [HttpPut]
