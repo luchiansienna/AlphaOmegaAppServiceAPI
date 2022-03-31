@@ -41,6 +41,7 @@ namespace AlphaOmegaAppServiceAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AlphaOmegaAppServiceAPI", Version = "v1" });
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,13 +79,19 @@ namespace AlphaOmegaAppServiceAPI
                     }
                 });
             });
-            
+
             app.UseStatusCodePages();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials());
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
